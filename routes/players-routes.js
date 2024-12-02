@@ -17,6 +17,18 @@ router.get('/', async (_req, res) => {
   }
 });
 
+router.get('/:year', async (req, res) => {
+  const year = Number(req.params.year);
+  try {
+    const players = await knex('draw').where('year', year);
+    res.status(200).json(players);
+  } catch (error) {
+    res
+      .status(400)
+      .send(`Error retrieving players for opening round: ${error}`);
+  }
+});
+
 router.get('/placings', async (_req, res) => {
   try {
     const data = await knex
