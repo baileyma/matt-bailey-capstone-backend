@@ -32,8 +32,8 @@ router.get('/year/:year', async (req, res) => {
         'pl2.name as player2_name',
         'ma.score'
       )
-      .innerJoin('players as pl1', 'ma.player1_id', 'pl1.id')
-      .innerJoin('players as pl2', 'ma.player2_id', 'pl2.id')
+      .leftJoin('players as pl1', 'ma.player1_id', 'pl1.id')
+      .leftJoin('players as pl2', 'ma.player2_id', 'pl2.id')
       .where('ma.year', year);
     console.log('players', players);
 
@@ -45,13 +45,33 @@ router.get('/year/:year', async (req, res) => {
   }
 });
 
-router.get('/placings', async (_req, res) => {
+router.get('/placings/:year', async (req, res) => {
+  const { year } = req.params;
+  console.log('Tried');
+
   try {
     const data = await knex
-      .select('winner_id', 'loser_id', 'draw', 'round')
-      .from('matches')
-      .whereIn('round', ['final', 'playoff']);
+      .select('pl1.name as winner', 'pl2.name as loser', 'draw', 'round')
+      .from('matches as ma')
+      .where('year', year)
+      .whereIn('round', ['final', 'Play off'])
+      .innerJoin('players as pl1', 'ma.winner_id', 'pl1.id')
+      .innerJoin('players as pl2', 'ma.loser_id', 'pl2.id');
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(400).send(`Error retrieving placings data: ${err}`);
+  }
+});
 
+router.get('/placings-allyears', async (_req, res) => {
+  try {
+    const data = await knex
+      .select('pl1.name as winner', 'pl2.name as loser', 'draw', 'year')
+      .from('matches as ma')
+      .where('round', 'final')
+      .innerJoin('players as pl1', 'ma.winner_id', 'pl1.id')
+      .innerJoin('players as pl2', 'ma.loser_id', 'pl2.id');
+    console.log('hit it');
     res.status(200).json(data);
   } catch (err) {
     res.status(400).send(`Error retrieving placings data: ${err}`);
@@ -68,32 +88,11 @@ router.get('/head-to-head', async (req, res) => {
     const data = await knex('matches')
       .where('winner_id', winnerid)
       .where('loser_id', loserid);
-    console.log(data, 'this did worked');
 
     res.status(200).json(data);
   } catch (err) {
     res.status(400).send(`Error retrieving head-to-head matches: ${err}`);
   }
 });
-
-// http://localhost:8080/players/placings2/2024
-// router.get('/placings2/:year', async (req, res) => {
-//   const year = req.params.year;
-//   console.log('got it');
-
-//   try {
-//     const data = await knex('matches as ma')
-//       .select('ma.draw', 'ma.round', 'ma.winner_id', 'ma.loser_id')
-//       .innerJoin('players as pl1', 'ma.winner_id', 'pl1.id')
-//       .innerJoin('players as pl2', 'ma.loser_id', 'pl2.id')
-//       .where('year', year);
-
-//     console.log(data);
-
-//     res.status(200).json(data);
-//   } catch (err) {
-//     res.status(400).send(`Error retrieving placings: ${err}`);
-//   }
-// });
 
 export default router;

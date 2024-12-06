@@ -38,6 +38,8 @@ router.get('/:matchID', async (req, res) => {
       .where('ma.id', matchID)
       .first();
 
+    console.log('I tried');
+
     res.status(200).json(data);
   } catch (err) {
     res.status(400).send(`Error retrieving players: ${err}`);
