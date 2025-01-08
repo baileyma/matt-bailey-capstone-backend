@@ -19,15 +19,15 @@ For 17 years, my friend has been running an annual tennis tournament. Managing t
 
 In addition, much of the tournament’s history has gone from memory. Noone can now remember who played in the 2012 semi-finals. The details are gone!  
 
-## 🖥️ The Website
+### 🖥️ The Website
 
-With **this website**, we can:  
+With this website, we can:  
 - **Automate administrative tasks**, reducing manual work for my friend during the tournament.  
 - **Preserve match results** for future reference. I am confident all the tournament’s players will in the distant future greatly enjoy looking through the archives at matches they’ve played.
 
 ---
 
-### 🛠️ What This Website Does  
+### 🛠️ What It Does  
 
 This website handles the **heavy lifting** so my friend can focus on the tennis:  
 
@@ -49,6 +49,7 @@ This website handles the **heavy lifting** so my friend can focus on the tennis:
 
 ## **Database**:  
 - MySQL  
+
 
 
 
