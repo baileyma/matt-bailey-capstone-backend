@@ -4,13 +4,7 @@
 
 ### 🤔 The Problem  
 
-For 17 years, my friend has been running an annual tennis tournament. Managing the tournament is **time-consuming** for him, and much of the tournament’s history has gone from memory. Noone can now remember who played in the 2012 semi-finals? The details are gone!  
-
-With **this website**, we can:  
-- **Automate administrative tasks**, reducing manual work for my friend during the tournament.  
-- **Preserve match results** for future reference. I am confident all the tournament’s players will in the distant future greatly enjoy looking through the archives at matches they’ve played.
-
-The main benefit of this website is its automatic generation of the tournament’s unique and complex format. The format is as follows:  
+For 17 years, my friend has been running an annual tennis tournament. Managing the tournament is **time-consuming** for him as the tournament follows a unique and complex format:  
 
 1. **🎲 Opening Round**  
    - A **random draw** (‘out of the hat’) decides the four opening matches.  
@@ -21,7 +15,15 @@ The main benefit of this website is its automatic generation of the tournament�
    - Consists of two Semi-Finals, a Third-Place Playoff, and a **Plate Final**.  
 
 3. **🏆 Main Draw**  
-   - Mirrors the Plate Draw with two Semi-Finals, a Third-Place Playoff, and the **Main Final**.  
+   - Mirrors the Plate Draw with two Semi-Finals, a Third-Place Playoff, and the **Main Final**.
+
+In addition, much of the tournament’s history has gone from memory. Noone can now remember who played in the 2012 semi-finals. The details are gone!  
+
+## 🖥️ The Website
+
+With **this website**, we can:  
+- **Automate administrative tasks**, reducing manual work for my friend during the tournament.  
+- **Preserve match results** for future reference. I am confident all the tournament’s players will in the distant future greatly enjoy looking through the archives at matches they’ve played.
 
 ---
 
@@ -37,4 +39,16 @@ This website handles the **heavy lifting** so my friend can focus on the tennis:
 
 ---
 
-This website is the perfect solution for streamlining my friend’s management of the tournament while also celebrating its history! Players can focus on their game, and my friend can enjoy the event without the stress of administration. 🎾
+### 🖥️ Tech Stack 
+
+## **Frontend**:  
+- React.js  
+
+## **Backend**:  
+- Node.js with Express.js  
+
+## **Database**:  
+- MySQL  
+
+
+
