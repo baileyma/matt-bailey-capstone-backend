@@ -18,3 +18,5 @@ app.use('/draw', drawRoutes);
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
+
+export { app };

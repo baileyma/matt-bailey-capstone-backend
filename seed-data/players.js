@@ -1,47 +1,47 @@
 export default [
   {
     id: 1,
-    name: 'H Mills',
+    name: 'R Federer',
   },
 
   {
     id: 2,
-    name: 'G Cooke-Yarborough',
+    name: 'S Williams',
   },
   {
     id: 3,
-    name: 'H Taylour',
+    name: 'A Agassi',
   },
   {
     id: 4,
-    name: 'E Barry',
+    name: 'S Graf',
   },
   {
     id: 5,
-    name: 'F Lowe',
+    name: 'J McEnroe',
   },
   {
     id: 6,
-    name: 'H Bailey',
+    name: 'M Navratilova',
   },
   {
     id: 7,
-    name: 'P Fuller',
+    name: 'R Nadal',
   },
   {
     id: 8,
-    name: 'M Bailey',
+    name: 'M Sharapova',
   },
   {
     id: 9,
-    name: 'L Cheetham',
+    name: 'N Djokovic',
   },
   {
     id: 10,
-    name: 'J Hibbs',
+    name: 'V Williams',
   },
   {
     id: 11,
-    name: 'P Hanbury-Williams',
+    name: 'P Sampras',
   },
 ];
